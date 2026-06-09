@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Asset Mapping — A Pathway for the Global Hub Team</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=Libre+Franklin:wght@300;400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#ED1C2E;
+    --yellow:#FFCC32;
+    --blue:#009CCC;
+    --ocean:#9AA4AF;
+    --cool:#C4C4C4;
+    --slate:#50545D;
+    --black:#263842;
+    --paper:#FBFAF7;
+    --line:#E4E1DA;
+    --green:#1A6B3C;
+    --green-l:#EAF3EE;
+    --amber:#8A5000;
+    --amber-l:#FFF3E0;
+    --coral:#B83225;
+    --coral-l:#FDECEA;
+    --blue-l:#E6F4FA;
+    --purple:#5C4FA0;
+    --serif:'Source Serif 4',Georgia,serif;
+    --display:'Playfair Display',Georgia,serif;
+    --sans:'Libre Franklin',-apple-system,BlinkMacSystemFont,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--paper);
+    color:var(--black);
+    font-family:var(--serif);
+    font-size:18px;
+    line-height:1.62;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:860px;margin:0 auto;padding:0 28px;}
+
+  /* eyebrow */
+  .eyebrow{
+    font-family:var(--sans);font-weight:600;font-size:12px;
+    letter-spacing:.18em;text-transform:uppercase;color:var(--red);
+  }
+  .eyebrow.muted{color:var(--ocean);}
+  .eyebrow.blue{color:var(--blue);}
+
+  /* hero */
+  header.hero{padding:92px 0 64px;border-bottom:1px solid var(--line);}
+  .hero .eyebrow{margin-bottom:26px;}
+  .hero h1{
+    font-family:var(--display);font-weight:600;
+    font-size:clamp(36px,6vw,60px);line-height:1.04;
+    letter-spacing:-.01em;margin-bottom:28px;
+  }
+  .hero h1 em{font-style:italic;color:var(--red);}
+  .hero .lede{
+    font-size:clamp(19px,2.4vw,22px);line-height:1.5;
+    color:var(--slate);max-width:640px;
+  }
+  .hero .meta{
+    margin-top:40px;display:flex;gap:36px;flex-wrap:wrap;
+    font-family:var(--sans);font-size:13px;color:var(--slate);
+  }
+  .hero .meta div span{
+    display:block;font-weight:600;letter-spacing:.1em;
+    text-transform:uppercase;font-size:11px;color:var(--ocean);margin-bottom:4px;
+  }
+
+  /* sections */
+  section{padding:72px 0;border-bottom:1px solid var(--line);}
+  .sec-head{margin-bottom:40px;}
+  .sec-head .eyebrow{margin-bottom:14px;display:block;}
+  .sec-head h2{
+    font-family:var(--display);font-weight:600;
+    font-size:clamp(26px,4vw,38px);line-height:1.1;
+    letter-spacing:-.01em;max-width:680px;
+  }
+  .sec-head p.intro{margin-top:18px;color:var(--slate);max-width:640px;font-size:17px;}
+  p{margin-bottom:18px;}
+  p.last{margin-bottom:0;}
+
+  /* dark pull */
+  .shift{background:var(--black);color:var(--paper);margin:0 -28px;padding:60px 28px;}
+  .shift .inner{max-width:804px;margin:0 auto;}
+  .shift .eyebrow{color:var(--yellow);margin-bottom:20px;display:block;}
+  .shift blockquote{
+    font-family:var(--display);font-style:italic;font-weight:500;
+    font-size:clamp(22px,3.2vw,30px);line-height:1.32;letter-spacing:-.005em;
+  }
+  .shift blockquote .hl{color:var(--yellow);font-style:normal;}
+  .shift .attrib{font-family:var(--sans);font-size:13px;color:var(--ocean);margin-top:24px;letter-spacing:.02em;}
+
+  /* problem statement */
+  .problem-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:24px;}
+  .problem-grid .card{background:var(--paper);padding:32px 28px;}
+  .problem-grid .card .tag{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--blue);margin-bottom:14px;display:block;}
+  .problem-grid .card h3{font-family:var(--sans);font-weight:600;font-size:17px;margin-bottom:10px;}
+  .problem-grid .card p{font-size:16px;color:var(--slate);margin-bottom:0;}
+
+  /* three streams */
+  .streams{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .streams .stream{background:var(--paper);padding:28px 22px;}
+  .streams .stream .tag{font-family:var(--sans);font-size:11px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px;display:block;}
+  .streams .stream.hc .tag{color:var(--red);}
+  .streams .stream.tr .tag{color:var(--blue);}
+  .streams .stream.co .tag{color:var(--green);}
+  .streams .stream h4{font-family:var(--sans);font-weight:600;font-size:16px;margin-bottom:8px;}
+  .streams .stream p{font-size:14.5px;color:var(--slate);margin-bottom:0;line-height:1.5;}
+
+  /* governance principles */
+  .principles{display:flex;flex-direction:column;gap:0;}
+  .principle{display:flex;gap:24px;padding:28px 0;border-top:1px solid var(--line);}
+  .principle:first-child{border-top:none;}
+  .principle .marker{font-family:var(--display);font-weight:600;font-size:28px;color:var(--red);flex-shrink:0;width:36px;line-height:1;}
+  .principle .body h4{font-family:var(--sans);font-weight:600;font-size:17px;margin-bottom:6px;}
+  .principle .body p{font-size:16px;color:var(--slate);margin-bottom:0;}
+
+  /* ═══════════════════════════
+     DECISION TREE
+  ═══════════════════════════ */
+  .tree-section{background:var(--paper);}
+
+  .phase-block{margin-bottom:48px;}
+  .phase-block:last-child{margin-bottom:0;}
+
+  .phase-header{
+    display:flex;align-items:center;gap:14px;
+    margin-bottom:24px;padding-bottom:16px;
+    border-bottom:2px solid var(--line);
+  }
+  .phase-tag{
+    font-family:var(--sans);font-size:10px;font-weight:700;
+    letter-spacing:.14em;text-transform:uppercase;
+    color:var(--paper);padding:5px 12px;flex-shrink:0;
+  }
+  .phase-tag.p1{background:var(--purple);}
+  .phase-tag.p2{background:var(--blue);}
+  .phase-tag.p3{background:var(--green);}
+  .phase-tag.obs{background:var(--slate);}
+  .phase-title{font-family:var(--sans);font-weight:600;font-size:15px;letter-spacing:.03em;text-transform:uppercase;color:var(--black);}
+  .phase-note{font-family:var(--sans);font-size:12px;color:var(--ocean);margin-left:auto;font-style:italic;}
+
+  /* Tree nodes */
+  .tree{display:flex;flex-direction:column;gap:0;}
+
+  .t-row{display:flex;align-items:stretch;gap:0;}
+  .t-pipe{width:32px;display:flex;flex-direction:column;align-items:center;flex-shrink:0;}
+  .t-pipe-line{width:1.5px;background:var(--cool);flex:1;min-height:12px;}
+  .t-pipe-dot{width:8px;height:8px;border-radius:50%;background:var(--ocean);flex-shrink:0;margin:3px 0;}
+  .t-pipe-dot.red{background:var(--red);}
+  .t-pipe-dot.blue{background:var(--blue);}
+  .t-pipe-dot.green{background:var(--green);}
+  .t-pipe-dot.amber{background:var(--amber);}
+  .t-pipe-dot.purple{background:var(--purple);}
+
+  .t-node{flex:1;padding:14px 16px;margin:5px 0;border-left:2px solid transparent;}
+  .t-node.start{background:var(--black);border-left-color:var(--red);}
+  .t-node.start .t-label{color:var(--red);}
+  .t-node.start .t-title{color:var(--paper);}
+  .t-node.start .t-sub{color:var(--ocean);}
+  .t-node.question{background:#F4F3F0;border-left-color:var(--cool);}
+  .t-node.question .t-label{color:var(--slate);}
+  .t-node.action{background:var(--blue-l);border-left-color:var(--blue);}
+  .t-node.action .t-label{color:var(--blue);}
+  .t-node.complete{background:var(--green-l);border-left-color:var(--green);}
+  .t-node.complete .t-label{color:var(--green);}
+  .t-node.warn{background:var(--amber-l);border-left-color:var(--amber);}
+  .t-node.warn .t-label{color:var(--amber);}
+  .t-node.pause{background:var(--coral-l);border-left-color:var(--coral);}
+  .t-node.pause .t-label{color:var(--coral);}
+
+  .t-label{font-family:var(--sans);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;margin-bottom:3px;}
+  .t-title{font-family:var(--sans);font-weight:600;font-size:14px;color:var(--black);line-height:1.35;margin-bottom:3px;}
+  .t-sub{font-family:var(--sans);font-size:12px;color:var(--slate);line-height:1.5;}
+
+  /* branch splits */
+  .t-branch{display:grid;gap:10px;margin:5px 0 5px 32px;}
+  .t-branch.two{grid-template-columns:1fr 1fr;}
+  .t-branch.three{grid-template-columns:1fr 1fr 1fr;}
+  .t-card{padding:12px 14px;border-left:2px solid transparent;}
+  .t-card.proceed{background:var(--green-l);border-left-color:var(--green);}
+  .t-card.proceed .t-label{color:var(--green);}
+  .t-card.pause{background:var(--amber-l);border-left-color:var(--amber);}
+  .t-card.pause .t-label{color:var(--amber);}
+  .t-card.gap{background:var(--coral-l);border-left-color:var(--coral);}
+  .t-card.gap .t-label{color:var(--coral);}
+  .t-card.neutral{background:#F4F3F0;border-left-color:var(--cool);}
+  .t-card.neutral .t-label{color:var(--slate);}
+  .t-card.blue{background:var(--blue-l);border-left-color:var(--blue);}
+  .t-card.blue .t-label{color:var(--blue);}
+
+  /* workflow row */
+  .t-workflow{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:5px 0 5px 32px;}
+  .t-wf{background:var(--blue-l);border-left:2px solid var(--blue);padding:10px 12px;}
+  .t-wf .t-label{color:var(--blue);}
+
+  /* stakeholder badges */
+  .t-badges{display:flex;gap:8px;flex-wrap:wrap;margin:5px 0 5px 32px;}
+  .badge{font-family:var(--sans);font-size:11px;font-weight:600;padding:4px 10px;letter-spacing:.04em;}
+  .badge.gov{background:#F0EEF9;color:var(--purple);border:1px solid #C5BEEA;}
+  .badge.ops{background:var(--blue-l);color:var(--blue);border:1px solid #A8D9EE;}
+  .badge.stream{background:var(--green-l);color:var(--green);border:1px solid #A8D9C0;}
+
+  /* phase transition note */
+  .t-transition{
+    font-family:var(--sans);font-size:12px;color:var(--ocean);
+    border-top:1px dashed var(--cool);margin:20px 0;
+    padding-top:14px;font-style:italic;
+    display:flex;align-items:center;gap:8px;
+  }
+  .t-transition::before{content:'↓';color:var(--red);font-style:normal;font-size:14px;}
+
+  /* non-negotiables */
+  .nn{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);}
+  .nn .item{background:var(--paper);padding:28px 24px;}
+  .nn .item h4{font-family:var(--sans);font-weight:600;font-size:16px;margin-bottom:8px;}
+  .nn .item p{font-size:15px;color:var(--slate);margin-bottom:0;}
+
+  /* close */
+  .close{padding:72px 0 80px;}
+  .close .eyebrow{margin-bottom:20px;display:block;}
+  .close h2{font-family:var(--display);font-weight:600;font-size:clamp(24px,3.6vw,34px);line-height:1.15;margin-bottom:24px;max-width:680px;}
+  .close p{color:var(--slate);font-size:17px;max-width:640px;}
+
+  /* footer */
+  footer{border-top:1px solid var(--line);padding:28px 0;font-family:var(--sans);font-size:13px;color:var(--ocean);}
+
+  /* reveal animation */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .55s ease,transform .55s ease;}
+  .reveal.in{opacity:1;transform:none;}
+
+  @media(max-width:600px){
+    .problem-grid,.streams,.t-branch.three,.t-workflow{grid-template-columns:1fr;}
+    .t-branch.two{grid-template-columns:1fr;}
+    .nn{grid-template-columns:1fr;}
+    .phase-note{display:none;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HERO ── -->
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Global Hub Team · Hub Cities Resource Infrastructure</p>
+    <h1>Making what exists<br><em>findable.</em></h1>
+    <p class="lede">A framing document and proposed pathway for the GHT asset mapping initiative — surfacing what hub city affiliates have already built, so the whole network can find it, use it, and build on it.</p>
+    <div class="meta">
+      <div><span>Status</span>Scoping · working document</div>
+      <div><span>Stream</span>Hub Cities · pilot phase</div>
+      <div><span>Audience</span>RCTC · MAT · GLT · Training · Coaching</div>
+    </div>
+  </div>
+</header>
+
+<!-- ── THE PROBLEM ── -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">The problem</span>
+      <h2>The network has built more than it knows it has.</h2>
+      <p class="intro">Hub city affiliates have developed strategies, tools, frameworks, and case studies over years of faithful work. Most of it is invisible to the rest of the network — not because it is not shareable, but because there is no system for surfacing it.</p>
+    </div>
+    <div class="problem-grid reveal">
+      <div class="card">
+        <span class="tag">What is happening now</span>
+        <h3>Resources exist in silos</h3>
+        <p>City strategies, gospel DNA tools, movement metrics, leadership frameworks, and coaching materials sit in individual affiliate folders, email threads, and local drives — built well, but invisible beyond the city that made them.</p>
+      </div>
+      <div class="card">
+        <span class="tag">What this costs the network</span>
+        <h3>Affiliates rebuild what already exists</h3>
+        <p>Without visibility, cities reinvent. Translation work is duplicated. Gaps in the network go undetected. Bridge resources — the ones that connect clusters across streams — are never identified.</p>
+      </div>
+    </div>
+    <p class="reveal" style="color:var(--slate);font-size:17px;">The goal of asset mapping is not to build a new system first and populate it after. It is to go to the people, understand what they have built and what they call it, and let the infrastructure grow from that understanding.</p>
+  </div>
+</section>
+
+<!-- ── DARK PULL ── -->
+<section style="padding:0;border:none;">
+  <div class="wrap">
+    <div class="shift reveal">
+      <div class="inner">
+        <span class="eyebrow">The founding commitment</span>
+        <blockquote>This is not a knowledge management system <span class="hl">imposed</span> on affiliates. It is a GHT initiative, shaped collaboratively — <span class="hl">designed before it is built.</span></blockquote>
+        <p class="attrib">From the GHT project brief. The discipline that governs every decision in this pathway.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── THREE STREAMS ── -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">The three resource streams</span>
+      <h2>One network. Three distinct communities of practice.</h2>
+      <p class="intro">Asset mapping begins with Hub Cities and is designed to extend to Training and Coaching once the methodology is proven. Each stream has its own professional identity, vocabulary, and kind of material.</p>
+    </div>
+    <div class="streams reveal">
+      <div class="stream hc">
+        <span class="tag">Hub City Resources · Pilot</span>
+        <h4>City strategies and movement tools</h4>
+        <p>Gospel DNA, movement metrics, city engagement tools, strategic frameworks. The primary identity of the network — cities are how people think about themselves and their work.</p>
+      </div>
+      <div class="stream tr">
+        <span class="tag">Training Resources · Observing</span>
+        <h4>Curriculum and formation</h4>
+        <p>Facilitator guides, leadership formation materials, church multiplication curriculum. Observes the Hub Cities pilot before running its own stream mapping.</p>
+      </div>
+      <div class="stream co">
+        <span class="tag">Coaching Resources · Observing</span>
+        <h4>Coaching tools and case studies</h4>
+        <p>Gospel coaching manuals, practitioner case studies, context-specific coaching frameworks. Observes the Hub Cities pilot before running its own stream mapping.</p>
+      </div>
+    </div>
+    <p class="reveal" style="margin-top:24px;color:var(--slate);font-size:16px;font-style:italic;">Streams are separate by design — they reflect different professional identities and different kinds of materials. Cross-stream vocabulary is agreed collaboratively, not imposed from above.</p>
+  </div>
+</section>
+
+<!-- ── GOVERNANCE PRINCIPLES ── -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Governance</span>
+      <h2>The system serves those who built it.</h2>
+      <p class="intro">Four principles that govern every decision in this infrastructure.</p>
+    </div>
+    <div class="principles reveal">
+      <div class="principle">
+        <div class="marker">1</div>
+        <div class="body">
+          <h4>Affiliate ownership</h4>
+          <p>Affiliates retain ownership of all submitted resources. Files stay in affiliate-controlled Google Drive. The system holds metadata and links only — never the file itself.</p>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="marker">2</div>
+        <div class="body">
+          <h4>Permission by default</h4>
+          <p>Nothing becomes more visible without explicit approval at the point of submission. No resource is shared beyond its stated permission level — ever.</p>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="marker">3</div>
+        <div class="body">
+          <h4>Withdrawal is always possible</h4>
+          <p>Affiliates can request removal of any resource at any time. The system does not hold what people no longer wish to share.</p>
+        </div>
+      </div>
+      <div class="principle">
+        <div class="marker">4</div>
+        <div class="body">
+          <h4>Participation is invited, not required</h4>
+          <p>The value of the network grows with participation. It does not depend on universal compliance. No affiliate is pressured to contribute.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ── DECISION FLOW DIAGRAM ── -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">The pathway</span>
+      <h2>How GHT goes about asset mapping.</h2>
+      <p class="intro">A three-phase process. Each phase has a clear completion condition before the next begins. Diamonds are decisions — every branch leads somewhere. The sequence is not negotiable: relationship and alignment precede discovery.</p>
+    </div>
+  </div>
+
+  <div style="max-width:860px;margin:0 auto;padding:0 28px;">
+    <div class="reveal" style="background:#F6F5F1;border:1px solid var(--line);padding:32px 24px;">
+      <svg width="100%" viewBox="0 0 680 1340" role="img" xmlns="http://www.w3.org/2000/svg">
+        <title>GHT asset mapping decision flow</title>
+        <desc>Three-phase decision flow diagram showing GHT's asset mapping process from stakeholder alignment through affiliate engagement to discovery and network visibility.</desc>
+        <defs>
+          <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </marker>
+        </defs>
+
+        <!-- Phase rail labels -->
+        <rect x="4" y="70" width="6" height="220" rx="3" fill="#5C4FA0" opacity="0.7"/>
+        <rect x="4" y="330" width="6" height="290" rx="3" fill="#185FA5" opacity="0.7"/>
+        <rect x="4" y="660" width="6" height="580" rx="3" fill="#2D7A3A" opacity="0.7"/>
+
+        <text font-family="'Libre Franklin',sans-serif" font-size="10" font-weight="600" fill="#5C4FA0" letter-spacing="0.1" text-anchor="middle" transform="translate(7,220) rotate(-90)">PHASE 1</text>
+        <text font-family="'Libre Franklin',sans-serif" font-size="10" font-weight="600" fill="#185FA5" letter-spacing="0.1" text-anchor="middle" transform="translate(7,490) rotate(-90)">PHASE 2</text>
+        <text font-family="'Libre Franklin',sans-serif" font-size="10" font-weight="600" fill="#2D7A3A" letter-spacing="0.1" text-anchor="middle" transform="translate(7,960) rotate(-90)">PHASE 3</text>
+
+        <!-- ── START ── -->
+        <rect x="220" y="20" width="240" height="40" rx="20" fill="#263842" stroke="none"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="13" font-weight="600" fill="#FBFAF7" text-anchor="middle" x="340" y="40" dominant-baseline="central">Start</text>
+
+        <line x1="340" y1="60" x2="340" y2="82" stroke="#263842" stroke-width="1.5" marker-end="url(#arr)"/>
+
+        <!-- ── PHASE 1 ── -->
+        <!-- Step 1: Parallel conversations -->
+        <rect x="130" y="82" width="420" height="52" rx="4" fill="#EEEDFE" stroke="#5C4FA0" stroke-width="0.75"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="11" font-weight="600" fill="#3C3489" text-anchor="middle" x="340" y="101" dominant-baseline="central">Step 1 — parallel conversations (all at once)</text>
+        <text font-family="'Libre Franklin',sans-serif" font-size="11" fill="#534AB7" text-anchor="middle" x="340" y="121" dominant-baseline="central">Training · Coaching · RCTC individually, same time</text>
+
+        <!-- Fan out to three -->
+        <path d="M340 134 L340 150 L160 150 L160 168" fill="none" stroke="#5C4FA0" stroke-width="1" marker-end="url(#arr)"/>
+        <path d="M340 134 L340 168" fill="none" stroke="#5C4FA0" stroke-width="1" marker-end="url(#arr)"/>
+        <path d="M340 134 L340 150 L520 150 L520 168" fill="none" stroke="#5C4FA0" stroke-width="1" marker-end="url(#arr)"/>
+
+        <!-- Three conversation nodes -->
+        <rect x="76" y="168" width="168" height="40" rx="4" fill="#EEEDFE" stroke="#5C4FA0" stroke-width="0.75"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="11" font-weight="600" fill="#3C3489" text-anchor="middle" x="160" y="183" dominant-baseline="central">Training convener</text>
+        <text font-family="'Libre Franklin',sans-serif" font-size="10" fill="#534AB7" text-anchor="middle" x="160" y="199" dominant-baseline="central">Is the direction right?</text>
+
+        <rect x="256" y="168" width="168" height="40" rx="4" fill="#EEEDFE" stroke="#5C4FA0" stroke-width="0.75"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="11" font-weight="600" fill="#3C3489" text-anchor="middle" x="340" y="183" dominant-baseline="central">Coaching convener</text>
+        <text font-family="'Libre Franklin',sans-serif" font-size="10" fill="#534AB7" text-anchor="middle" x="340" y="199" dominant-baseline="central">Is the direction right?</text>
+
+        <rect x="436" y="168" width="168" height="40" rx="4" fill="#EEEDFE" stroke="#5C4FA0" stroke-width="0.75"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="11" font-weight="600" fill="#3C3489" text-anchor="middle" x="520" y="183" dominant-baseline="central">RCTC operations</text>
+        <text font-family="'Libre Franklin',sans-serif" font-size="10" fill="#534AB7" text-anchor="middle" x="520" y="199" dominant-baseline="central">Any operational concerns?</text>
+
+        <!-- Converge back -->
+        <path d="M160 208 L160 228 L340 228 L340 248" fill="none" stroke="#5C4FA0" stroke-width="1" marker-end="url(#arr)"/>
+        <path d="M340 208 L340 248" fill="none" stroke="#5C4FA0" stroke-width="1" marker-end="url(#arr)"/>
+        <path d="M520 208 L520 228 L340 228" fill="none" stroke="#5C4FA0" stroke-width="1"/>
+
+        <!-- Decision diamond: concerns? -->
+        <polygon points="340,248 424,282 340,316 256,282" fill="#FBFAF7" stroke="#5C4FA0" stroke-width="1"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="11" font-weight="600" fill="#3C3489" text-anchor="middle" x="340" y="282" dominant-baseline="central">Concerns raised?</text>
+
+        <!-- Yes → adapt (left) -->
+        <path d="M256 282 L156 282 L156 334" fill="none" stroke="#854F0B" stroke-width="1" marker-end="url(#arr)"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="10" fill="#854F0B" text-anchor="middle" x="200" y="274">Yes</text>
+
+        <rect x="76" y="334" width="160" height="40" rx="4" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.75"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="11" font-weight="600" fill="#633806" text-anchor="middle" x="156" y="349" dominant-baseline="central">Adapt approach</text>
+        <text font-family="'Libre Franklin',sans-serif" font-size="10" fill="#854F0B" text-anchor="middle" x="156" y="365" dominant-baseline="central">Revisit before proceeding</text>
+
+        <!-- Loop back dashed -->
+        <path d="M76 354 L44 354 L44 108 L130 108" fill="none" stroke="#854F0B" stroke-width="0.75" stroke-dasharray="4 3" marker-end="url(#arr)"/>
+
+        <!-- No → confirm (right) -->
+        <path d="M424 282 L524 282 L524 334" fill="none" stroke="#2D7A3A" stroke-width="1" marker-end="url(#arr)"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="10" fill="#2D7A3A" text-anchor="middle" x="480" y="274">No</text>
+
+        <rect x="444" y="334" width="160" height="40" rx="4" fill="#EAF3DE" stroke="#3B6D11" stroke-width="0.75"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="11" font-weight="600" fill="#27500A" text-anchor="middle" x="524" y="349" dominant-baseline="central">Confirm approach</text>
+        <text font-family="'Libre Franklin',sans-serif" font-size="10" fill="#3B6D11" text-anchor="middle" x="524" y="365" dominant-baseline="central">Hub Cities pilots first</text>
+
+        <!-- Confirm → brief governance -->
+        <path d="M524 374 L524 402 L340 402 L340 420" fill="none" stroke="#5C4FA0" stroke-width="1" marker-end="url(#arr)"/>
+
+        <!-- Brief MAT + GLT -->
+        <rect x="130" y="420" width="420" height="52" rx="4" fill="#EEEDFE" stroke="#5C4FA0" stroke-width="0.75"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="11" font-weight="600" fill="#3C3489" text-anchor="middle" x="340" y="440" dominant-baseline="central">Brief MAT + GLT</text>
+        <text font-family="'Libre Franklin',sans-serif" font-size="11" fill="#534AB7" text-anchor="middle" x="340" y="460" dominant-baseline="central">Inform not approve · direction · scope · no fixed timeline</text>
+
+        <line x1="340" y1="472" x2="340" y2="494" stroke="#5C4FA0" stroke-width="1.5" marker-end="url(#arr)"/>
+
+        <!-- Decision diamond: blocker? -->
+        <polygon points="340,494 424,528 340,562 256,528" fill="#FBFAF7" stroke="#5C4FA0" stroke-width="1"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="11" font-weight="600" fill="#3C3489" text-anchor="middle" x="340" y="528" dominant-baseline="central">Blocker raised?</text>
+
+        <!-- Yes → pause -->
+        <path d="M256 528 L156 528 L156 578" fill="none" stroke="#A32D2D" stroke-width="1" marker-end="url(#arr)"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="10" fill="#A32D2D" text-anchor="middle" x="200" y="520">Yes</text>
+
+        <rect x="76" y="578" width="160" height="40" rx="4" fill="#FCEBEB" stroke="#A32D2D" stroke-width="0.75"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="11" font-weight="600" fill="#791F1F" text-anchor="middle" x="156" y="593" dominant-baseline="central">Pause + escalate</text>
+        <text font-family="'Libre Franklin',sans-serif" font-size="10" fill="#A32D2D" text-anchor="middle" x="156" y="609" dominant-baseline="central">MAT or GLT if needed</text>
+
+        <!-- No → Phase 1 complete -->
+        <path d="M424 528 L524 528 L524 578" fill="none" stroke="#2D7A3A" stroke-width="1" marker-end="url(#arr)"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="10" fill="#2D7A3A" text-anchor="middle" x="480" y="520">No</text>
+
+        <rect x="444" y="578" width="160" height="40" rx="4" fill="#EAF3DE" stroke="#3B6D11" stroke-width="0.75"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="11" font-weight="600" fill="#27500A" text-anchor="middle" x="524" y="593" dominant-baseline="central">Phase 1 complete</text>
+        <text font-family="'Libre Franklin',sans-serif" font-size="10" fill="#3B6D11" text-anchor="middle" x="524" y="609" dominant-baseline="central">Mandate to proceed</text>
+
+        <!-- Phase divider -->
+        <line x1="28" y1="636" x2="652" y2="636" stroke="#E4E1DA" stroke-width="1" stroke-dasharray="4 3"/>
+
+        <!-- ── PHASE 2 ── -->
+        <path d="M524 618 L524 648 L340 648 L340 664" fill="none" stroke="#185FA5" stroke-width="1" marker-end="url(#arr)"/>
+
+        <rect x="130" y="664" width="420" height="52" rx="4" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.75"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="11" font-weight="600" fill="#0C447C" text-anchor="middle" x="340" y="683" dominant-baseline="central">GHT opens conversation with affiliate leaders</text>
+        <text font-family="'Libre Franklin',sans-serif" font-size="11" fill="#185FA5" text-anchor="middle" x="340" y="703" dominant-baseline="central">Via RCTC + Training relationships · trust, not briefing</text>
+
+        <line x1="340" y1="716" x2="340" y2="738" stroke="#185FA5" stroke-width="1.5" marker-end="url(#arr)"/>
+
+        <rect x="130" y="738" width="420" height="52" rx="4" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.75"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="11" font-weight="600" fill="#0C447C" text-anchor="middle" x="340" y="757" dominant-baseline="central">Affiliate working session · 60 min</text>
+        <text font-family="'Libre Franklin',sans-serif" font-size="11" fill="#185FA5" text-anchor="middle" x="340" y="777" dominant-baseline="central">What do you collect? · Who owns it? · What do you call it?</text>
+
+        <line x1="340" y1="790" x2="340" y2="812" stroke="#185FA5" stroke-width="1.5" marker-end="url(#arr)"/>
+
+        <!-- Platform decision node -->
+        <rect x="130" y="812" width="420" height="52" rx="4" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.75"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="11" font-weight="600" fill="#633806" text-anchor="middle" x="340" y="831" dominant-baseline="central">Confirm platform</text>
+        <text font-family="'Libre Franklin',sans-serif" font-size="11" fill="#854F0B" text-anchor="middle" x="340" y="851" dominant-baseline="central">Google Workspace MVP · or quotes alternative</text>
+
+        <line x1="340" y1="864" x2="340" y2="886" stroke="#185FA5" stroke-width="1.5" marker-end="url(#arr)"/>
+
+        <!-- Decision: leaders ready? -->
+        <polygon points="340,886 424,920 340,954 256,920" fill="#FBFAF7" stroke="#185FA5" stroke-width="1"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="11" font-weight="600" fill="#0C447C" text-anchor="middle" x="340" y="920" dominant-baseline="central">Leaders ready?</text>
+
+        <!-- No → pause -->
+        <path d="M256 920 L156 920 L156 970" fill="none" stroke="#854F0B" stroke-width="1" marker-end="url(#arr)"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="10" fill="#854F0B" text-anchor="middle" x="200" y="912">No</text>
+
+        <rect x="76" y="970" width="160" height="40" rx="4" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.75"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="11" font-weight="600" fill="#633806" text-anchor="middle" x="156" y="985" dominant-baseline="central">Pause</text>
+        <text font-family="'Libre Franklin',sans-serif" font-size="10" fill="#854F0B" text-anchor="middle" x="156" y="1001" dominant-baseline="central">Relationship before process</text>
+
+        <!-- Yes → Phase 2 complete -->
+        <path d="M424 920 L524 920 L524 970" fill="none" stroke="#2D7A3A" stroke-width="1" marker-end="url(#arr)"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="10" fill="#2D7A3A" text-anchor="middle" x="480" y="912">Yes</text>
+
+        <rect x="444" y="970" width="160" height="40" rx="4" fill="#EAF3DE" stroke="#3B6D11" stroke-width="0.75"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="11" font-weight="600" fill="#27500A" text-anchor="middle" x="524" y="985" dominant-baseline="central">Phase 2 complete</text>
+        <text font-family="'Libre Franklin',sans-serif" font-size="10" fill="#3B6D11" text-anchor="middle" x="524" y="1001" dominant-baseline="central">Contact list confirmed</text>
+
+        <!-- Phase divider -->
+        <line x1="28" y1="1028" x2="652" y2="1028" stroke="#E4E1DA" stroke-width="1" stroke-dasharray="4 3"/>
+
+        <!-- ── PHASE 3 ── -->
+        <path d="M524 1010 L524 1040 L340 1040 L340 1056" fill="none" stroke="#2D7A3A" stroke-width="1" marker-end="url(#arr)"/>
+
+        <rect x="130" y="1056" width="420" height="52" rx="4" fill="#EAF3DE" stroke="#3B6D11" stroke-width="0.75"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="11" font-weight="600" fill="#27500A" text-anchor="middle" x="340" y="1075" dominant-baseline="central">Discovery outreach via relationships</text>
+        <text font-family="'Libre Franklin',sans-serif" font-size="11" fill="#3B6D11" text-anchor="middle" x="340" y="1095" dominant-baseline="central">What have you built that others could use?</text>
+
+        <!-- Three outcome branches -->
+        <path d="M340 1108 L340 1124 L160 1124 L160 1142" fill="none" stroke="#2D7A3A" stroke-width="1" marker-end="url(#arr)"/>
+        <path d="M340 1108 L340 1142" fill="none" stroke="#2D7A3A" stroke-width="1" marker-end="url(#arr)"/>
+        <path d="M340 1108 L340 1124 L520 1124 L520 1142" fill="none" stroke="#2D7A3A" stroke-width="1" marker-end="url(#arr)"/>
+
+        <rect x="68" y="1142" width="184" height="40" rx="4" fill="#EAF3DE" stroke="#3B6D11" stroke-width="0.75"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="11" font-weight="600" fill="#27500A" text-anchor="middle" x="160" y="1157" dominant-baseline="central">Assets ready</text>
+        <text font-family="'Libre Franklin',sans-serif" font-size="10" fill="#3B6D11" text-anchor="middle" x="160" y="1173" dominant-baseline="central">Submit via intake form</text>
+
+        <rect x="248" y="1142" width="184" height="40" rx="4" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.75"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="11" font-weight="600" fill="#633806" text-anchor="middle" x="340" y="1157" dominant-baseline="central">Needs packaging</text>
+        <text font-family="'Libre Franklin',sans-serif" font-size="10" fill="#854F0B" text-anchor="middle" x="340" y="1173" dominant-baseline="central">GHT assists affiliate</text>
+
+        <rect x="428" y="1142" width="184" height="40" rx="4" fill="#FAECE7" stroke="#993C1D" stroke-width="0.75"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="11" font-weight="600" fill="#4A1B0C" text-anchor="middle" x="520" y="1157" dominant-baseline="central">Gap identified</text>
+        <text font-family="'Libre Franklin',sans-serif" font-size="10" fill="#993C1D" text-anchor="middle" x="520" y="1173" dominant-baseline="central">Near-zero node · revisit</text>
+
+        <!-- Assets + packaging converge to GHT review -->
+        <path d="M160 1182 L160 1212 L340 1212 L340 1228" fill="none" stroke="#2D7A3A" stroke-width="1" marker-end="url(#arr)"/>
+        <path d="M340 1182 L340 1228" fill="none" stroke="#2D7A3A" stroke-width="1" marker-end="url(#arr)"/>
+
+        <!-- GHT review -->
+        <rect x="130" y="1228" width="420" height="52" rx="4" fill="#EAF3DE" stroke="#3B6D11" stroke-width="0.75"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="11" font-weight="600" fill="#27500A" text-anchor="middle" x="340" y="1247" dominant-baseline="central">GHT reviews · approves</text>
+        <text font-family="'Libre Franklin',sans-serif" font-size="11" fill="#3B6D11" text-anchor="middle" x="340" y="1267" dominant-baseline="central">Internal or global · resource network visible</text>
+
+        <!-- Revision loop -->
+        <path d="M130 1254 L44 1254 L44 1082 L130 1082" fill="none" stroke="#854F0B" stroke-width="0.75" stroke-dasharray="4 3" marker-end="url(#arr)"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="9" fill="#854F0B" x="18" y="1172" text-anchor="middle" transform="rotate(-90 18 1172)">revise + resubmit</text>
+
+        <!-- ── LEGEND ── -->
+        <rect x="28" y="1300" width="10" height="10" rx="2" fill="#EEEDFE" stroke="#5C4FA0" stroke-width="0.75"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="10" fill="#50545D" x="44" y="1310">Phase 1</text>
+        <rect x="110" y="1300" width="10" height="10" rx="2" fill="#E6F1FB" stroke="#185FA5" stroke-width="0.75"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="10" fill="#50545D" x="126" y="1310">Phase 2</text>
+        <rect x="192" y="1300" width="10" height="10" rx="2" fill="#EAF3DE" stroke="#3B6D11" stroke-width="0.75"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="10" fill="#50545D" x="208" y="1310">Phase 3</text>
+        <rect x="274" y="1300" width="10" height="10" rx="2" fill="#FAEEDA" stroke="#854F0B" stroke-width="0.75"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="10" fill="#50545D" x="290" y="1310">Pause / adapt</text>
+        <rect x="380" y="1300" width="10" height="10" rx="2" fill="#FCEBEB" stroke="#A32D2D" stroke-width="0.75"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="10" fill="#50545D" x="396" y="1310">Blocker</text>
+        <polygon points="470,1300 480,1306 470,1312 460,1306" fill="#FBFAF7" stroke="#5C4FA0" stroke-width="0.75"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="10" fill="#50545D" x="486" y="1310">Decision</text>
+        <line x1="560" y1="1305" x2="590" y2="1305" stroke="#854F0B" stroke-width="0.75" stroke-dasharray="4 3"/>
+        <text font-family="'Libre Franklin',sans-serif" font-size="10" fill="#50545D" x="596" y="1310">Loop back</text>
+
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ── NON-NEGOTIABLES ── -->
+<section>
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">What we will not trade away</span>
+      <h2>Our commitments.</h2>
+    </div>
+    <div class="nn reveal">
+      <div class="item">
+        <h4>Relationship before process</h4>
+        <p>No affiliate outreach before stakeholder alignment is genuine. No discovery before affiliate leaders are willing co-designers. The process cannot be shortcut by enthusiasm.</p>
+      </div>
+      <div class="item">
+        <h4>Affiliate ownership is not symbolic</h4>
+        <p>Files never leave affiliate-controlled storage. The system holds links. If this changes for any reason — technical or operational — the principle has been violated, not adapted.</p>
+      </div>
+      <div class="item">
+        <h4>Gaps are data too</h4>
+        <p>An affiliate with nothing ready is not a failure of the process. It is a near-zero node in the network graph — an identified under-resourced area. The system is designed to surface gaps, not hide them.</p>
+      </div>
+      <div class="item">
+        <h4>No fixed launch date</h4>
+        <p>This initiative is process-driven, not date-driven. A deadline that forces the co-design to be bypassed produces a system the network did not shape — and will not use.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CLOSE ── -->
+<div class="wrap">
+  <div class="close reveal">
+    <span class="eyebrow muted">The posture</span>
+    <h2>We are not building a system and then asking people to use it.</h2>
+    <p>We are going to the people first — understanding what they have built, what they call it, and what they are willing to share. The infrastructure grows from that understanding. The value of what is built depends entirely on the trust of the people who built it.</p>
+    <p class="last" style="color:var(--slate);font-size:17px;">This document is a starting point, not a specification. It will be revised as the co-design process proceeds.</p>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <strong>GHT Asset Mapping — A Pathway</strong> · Global Hub Team · City to City · Working document · 2026
+  </div>
+</footer>
+
+<script>
+  if(window.matchMedia('(prefers-reduced-motion: no-preference)').matches){
+    const io=new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+    },{threshold:0.10});
+    document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+  } else {
+    document.querySelectorAll('.reveal').forEach(el=>el.classList.add('in'));
+  }
+</script>
+
+</body>
+</html>
